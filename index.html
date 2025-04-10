@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mystic Tarot - Discover Your Destiny</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#8E6FF7',secondary:'#a98db8'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+}
+h1, h2, h3, h4, h5 {
+font-family: 'Playfair Display', serif;
+}
+.hero-gradient {
+background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.6) 80%, rgba(255,255,255,0) 100%);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.custom-checkbox {
+position: relative;
+display: inline-block;
+width: 20px;
+height: 20px;
+}
+.custom-checkbox input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 2px solid #e2e8f0;
+border-radius: 4px;
+transition: all 0.2s ease;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #7f5283;
+border-color: #7f5283;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 6px;
+top: 2px;
+width: 6px;
+height: 12px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 48px;
+height: 24px;
+}
+.custom-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #e2e8f0;
+transition: .4s;
+border-radius: 24px;
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .slider {
+background-color: #7f5283;
+}
+input:checked + .slider:before {
+transform: translateX(24px);
+}
+.custom-range {
+-webkit-appearance: none;
+width: 100%;
+height: 6px;
+border-radius: 5px;
+background: #e2e8f0;
+outline: none;
+}
+.custom-range::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 18px;
+height: 18px;
+border-radius: 50%;
+background: #7f5283;
+cursor: pointer;
+}
+.custom-range::-moz-range-thumb {
+width: 18px;
+height: 18px;
+border-radius: 50%;
+background: #7f5283;
+cursor: pointer;
+border: none;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Hero Section -->
+<section class="relative pt-8 overflow-hidden">
+<div class="absolute inset-0 z-0" style="background-image: url('https://public.readdy.ai/ai/img_res/381686e92a3914fde337848302fb443a.jpg'); background-size: cover; background-position: center;"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 py-20">
+<div class="hero-gradient w-full max-w-2xl py-16 px-10 rounded-lg">
+<h1 class="text-5xl font-bold text-gray-900 mb-4 leading-tight">Discover Your Destiny Through Tarot</h1>
+<p class="text-xl text-gray-700 mb-8 max-w-xl">Unlock the mysteries of your past, present, and future with our intuitive tarot readings. Begin your spiritual journey today.</p>
+<div class="flex flex-wrap gap-4">
+<a href="https://spiritual-power.com/free-3-card-tarot-reading-past-present-future/" class="bg-primary text-white px-8 py-3 !rounded-button font-medium text-lg hover:bg-primary/90 transition shadow-lg whitespace-nowrap cursor-pointer inline-block">Start Free Reading</a>
+<a href="https://spiritual-power.com/the-major-arcana-tarot-card-meanings/" class="bg-white text-primary border border-primary px-8 py-3 !rounded-button font-medium text-lg hover:bg-gray-50 transition whitespace-nowrap cursor-pointer">Learn More</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Reading Types -->
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-3">Beginner-Friendly Reading Types</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Start your tarot journey with these simple, easy-to-understand spreads perfect for newcomers.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="featured-readings">
+<!-- Featured readings will be populated here -->
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-16 bg-primary/5">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-3">How Tarot Readings Work</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Our simple process helps you get accurate insights in just a few steps.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8" id="how-it-works">
+<!-- How it works steps will be populated here -->
+</div>
+</div>
+</section>
+<!-- Reading Categories -->
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-3">Explore Tarot Readings</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Choose from our variety of specialized readings to gain insight into different aspects of your life.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="reading-categories">
+<!-- Reading categories will be populated here -->
+</div>
+</div>
+</section>
+<!-- Ready to Unveil Your Destiny - Option 1: Card with Gradient Background -->
+<section class="py-20 bg-gradient-to-r from-primary/20 to-secondary/20">
+<div class="max-w-7xl mx-auto px-6">
+<div class="bg-white rounded-xl shadow-lg p-10 md:p-16 text-center">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to Unveil Your Destiny?</h2>
+<p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">Begin your journey with a free tarot reading today and discover what the universe has in store for you.</p>
+<div class="flex flex-wrap gap-4 justify-center">
+<a href="https://spiritual-power.com/free-3-card-tarot-reading-past-present-future/" class="bg-primary text-white px-8 py-3 !rounded-button font-medium text-lg hover:bg-primary/90 transition shadow-md whitespace-nowrap cursor-pointer">Start Your Free Reading</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Ready to Unveil Your Destiny - Option 2: Split Design -->
+<section class="py-20 bg-white hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl shadow-lg overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="p-10 md:p-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to Unveil Your Destiny?</h2>
+<p class="text-gray-600 text-lg mb-8">Begin your journey with a free tarot reading today and discover what the universe has in store for you.</p>
+<div class="flex flex-wrap gap-4">
+<a href="https://spiritual-power.com/free-3-card-tarot-reading-past-present-future/" class="bg-primary text-white px-8 py-3 !rounded-button font-medium text-lg hover:bg-primary/90 transition shadow-md whitespace-nowrap cursor-pointer">Start Your Free Reading</a>
+</div>
+</div>
+<div class="p-10 md:p-16 bg-white/80 flex flex-col justify-center">
+<div class="mb-6">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-magic-line text-primary ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Personalized Insights</h3>
+<p class="text-gray-600">Receive guidance tailored specifically to your unique situation and energy.</p>
+</div>
+<div>
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-shield-star-line text-primary ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Spiritual Protection</h3>
+<p class="text-gray-600">All readings are performed with the highest spiritual protection and positive energy.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Ready to Unveil Your Destiny - Option 3: Minimalist Design -->
+<section class="py-20 bg-gray-50 hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-10">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to Unveil Your Destiny?</h2>
+<p class="text-gray-600 text-lg max-w-2xl mx-auto">Begin your journey with a free tarot reading today and discover what the universe has in store for you.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-heart-line text-primary ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Love Reading</h3>
+<p class="text-gray-600 mb-4">Gain insights into your romantic life and relationship potential.</p>
+<a href="/love-reading" class="text-primary font-medium hover:underline">Try Now →</a>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-briefcase-line text-primary ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Career Reading</h3>
+<p class="text-gray-600 mb-4">Discover opportunities for professional growth and prosperity.</p>
+<a href="/love-reading" class="text-primary font-medium hover:underline">Try Now →</a>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-seedling-line text-primary ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Spiritual Reading</h3>
+<p class="text-gray-600 mb-4">Explore your spiritual path and personal development journey.</p>
+<a href="/love-reading" class="text-primary font-medium hover:underline">Try Now →</a>
+</div>
+</div>
+<div class="text-center mt-10">
+<a href="https://spiritual-power.com/free-3-card-tarot-reading-past-present-future/" class="bg-primary text-white px-8 py-3 !rounded-button font-medium text-lg hover:bg-primary/90 transition shadow-md whitespace-nowrap cursor-pointer inline-block">Start Your Free Reading</a>
+</div>
+</div>
+</section>
+<script>
+// Mock data for reading categories
+const readingCategories = [
+{
+title: "Love & Relationships",
+description: "Gain insights into your romantic life, compatibility, and relationship potential.",
+icon: "ri-heart-line",
+color: "bg-red-100 text-red-600",
+image: "https://public.readdy.ai/ai/img_res/0cc259cd5af516ff6ffa73e74207b5e8.jpg"
+},
+{
+title: "Career & Finance",
+description: "Discover opportunities for professional growth and financial prosperity.",
+icon: "ri-briefcase-line",
+color: "bg-green-100 text-green-600",
+image: "https://public.readdy.ai/ai/img_res/72d545dacc9db695d4dd91aee730573e.jpg"
+},
+{
+title: "Spiritual Growth",
+description: "Explore your spiritual path and personal development journey.",
+icon: "ri-seedling-line",
+color: "bg-purple-100 text-purple-600",
+image: "https://public.readdy.ai/ai/img_res/9cdf9771db8ad599301cdde00cadd971.jpg"
+},
+{
+title: "Yes/No Questions",
+description: "Get clear answers to specific questions about important decisions.",
+icon: "ri-question-answer-line",
+color: "bg-amber-100 text-amber-600",
+image: "https://public.readdy.ai/ai/img_res/5acab1c7050acf2b43f65c67cbde1930.jpg"
+},
+{
+title: "Celtic Cross",
+description: "A comprehensive 10-card spread offering deep insights into complex situations.",
+icon: "ri-layout-masonry-line",
+color: "bg-blue-100 text-blue-600",
+image: "https://public.readdy.ai/ai/img_res/61c41148de5a303a984af91e49d16a77.jpg"
+}
+];
+// Mock data for popular searches - removed
+// Mock data for featured readings
+const featuredReadings = [
+{
+title: "General Readings",
+description: "Get a comprehensive overview of your current life situation and future possibilities.",
+difficulty: "Intermediate",
+time: "10-15 minutes",
+image: "https://public.readdy.ai/ai/img_res/ca2c5b948b255b2429246e4c452c315c.jpg"
+},
+{
+title: "Three-Card Spread",
+description: "A simple yet powerful spread revealing your past, present, and future.",
+difficulty: "Beginner",
+time: "5-10 minutes",
+image: "https://public.readdy.ai/ai/img_res/0095a1ef590184e8ae362518241e9e9c.jpg"
+},
+{
+title: "Daily Card Draw",
+description: "A single card to guide your day and provide focus for your intentions.",
+difficulty: "Beginner",
+time: "2-5 minutes",
+image: "https://public.readdy.ai/ai/img_res/5cd72dca966f0f16351254b1bd4c7b94.jpg"
+}
+];
+// Mock data for how it works
+const howItWorks = [
+{
+step: "1",
+title: "Choose Your Reading",
+description: "Select from our variety of specialized tarot spreads based on your needs.",
+icon: "ri-magic-line"
+},
+{
+step: "2",
+title: "Focus Your Intention",
+description: "Take a moment to center yourself and focus on your question or concern.",
+icon: "ri-mental-health-line"
+},
+{
+step: "3",
+title: "Reveal Your Cards",
+description: "Our virtual deck will select and display your unique card combination.",
+icon: "ri-layout-masonry-line"
+},
+{
+step: "4",
+title: "Receive Your Insights",
+description: "Get a detailed interpretation of your cards and their meaning for your life.",
+icon: "ri-lightbulb-line"
+}
+];
+// Mock data for testimonials - removed
+// Render reading categories
+document.getElementById('reading-categories').innerHTML = readingCategories.map(category => {
+let readingUrl = "/general-reading";
+if (category.title === "Love & Relationships") {
+readingUrl = "https://spiritual-power.com/love-tarot-card-reading/";
+} else if (category.title === "Career & Finance") {
+readingUrl = "https://spiritual-power.com/free-career-finance-reading/";
+} else if (category.title === "Spiritual Growth") {
+readingUrl = "https://spiritual-power.com/free-spiritual-growth-reading/";
+} else if (category.title === "Yes/No Questions") {
+readingUrl = "https://spiritual-power.com/yes-or-no-tarot-reading/";
+} else if (category.title === "Celtic Cross") {
+readingUrl = "https://spiritual-power.com/free-celtic-cross-tarot-reading/";
+}
+return `
+<div class="bg-white rounded-lg shadow-sm overflow-hidden transition-transform hover:shadow-md hover:-translate-y-1">
+<div class="h-48 overflow-hidden">
+<img src="${category.image}" alt="${category.title}" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center mb-3">
+<div class="w-10 h-10 ${category.color} rounded-full flex items-center justify-center mr-3">
+<i class="${category.icon}"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900">${category.title}</h3>
+</div>
+<p class="text-gray-600 mb-4">${category.description}</p>
+<a href="${readingUrl}"
+class="bg-primary text-white px-5 py-2 !rounded-button font-medium hover:bg-primary/90 transition whitespace-nowrap cursor-pointer inline-block" data-readdy="true">Begin Reading</a>
+</div>
+</div>
+`;
+}).join('');
+// Render popular searches - removed
+// Render featured readings
+document.getElementById('featured-readings').innerHTML = featuredReadings.map(reading => `
+<div class="bg-white rounded-lg shadow-sm overflow-hidden transition-transform hover:shadow-md hover:-translate-y-1">
+<div class="h-48 overflow-hidden">
+<img src="${reading.image}" alt="${reading.title}" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">${reading.title}</h3>
+<p class="text-gray-600 mb-4">${reading.description}</p>
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-gray-500 mr-1">
+<i class="ri-time-line"></i>
+</div>
+<span class="text-sm text-gray-500">${reading.time}</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-gray-500 mr-1">
+<i class="ri-bar-chart-line"></i>
+</div>
+<span class="text-sm text-gray-500">${reading.difficulty}</span>
+</div>
+</div>
+<a href="${reading.title === 'General Readings' ? 'https://spiritual-power.com/free-5-card-general-tarot-reading/' : reading.title === 'Three-Card Spread' ? 'https://spiritual-power.com/free-3-card-tarot-reading-past-present-future/' : 'https://spiritual-power.com/one-card-daily-tarot-reading/'}" class="bg-primary text-white px-5 py-2 !rounded-button font-medium hover:bg-primary/90 transition w-full whitespace-nowrap cursor-pointer inline-block text-center">Try This Spread</a>
+</div>
+</div>
+`).join('');
+// Render how it works
+document.getElementById('how-it-works').innerHTML = howItWorks.map(step => `
+<div class="bg-white rounded-lg p-6 text-center shadow-sm transition-transform hover:shadow-md hover:-translate-y-1">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<span class="text-primary text-3xl font-bold">${step.step}</span>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">${step.title}</h3>
+<p class="text-gray-600">${step.description}</p>
+</div>
+`).join('');
+// Render testimonials - removed
+</script>
+</body>
+</html>
